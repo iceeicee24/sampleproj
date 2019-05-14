@@ -5,94 +5,114 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col size-sm="4" offset-sm="4">
-        
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size-sm="4" offset-sm="4"> 
-        <ion-item>
-          <ion-label position="floating">Item Type</ion-label>       
-          <ion-select>
-            <ion-select-option>Food</ion-select-option>
-            <ion-select-option>Beverage</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size-sm="4" offset-sm="4">
-        <ion-item>
-          <ion-label position="floating">Category</ion-label>       
-          <ion-select>
-            <ion-select-option>Ready to eat</ion-select-option>
-            <ion-select-option>Ready to cook</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size-sm="4" offset-sm="4">
-        <ion-item>
-          <ion-label position="floating">Sub-Category</ion-label>       
-          <ion-select>
-            <ion-select-option>Hot Meal</ion-select-option>
-            <ion-select-option>Delicacies</ion-select-option>
-            <ion-select-option>Deserts and Pastries</ion-select-option>
-            <ion-select-option>Sauces, sides and spreads</ion-select-option>
-            <ion-select-option>Snacks and small bites</ion-select-option>
-            <ion-select-option>Others</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size-sm="4" offset-sm="4">
-        <ion-item>
-          <ion-label position="floating">Product Name</ion-label>
-          <ion-input></ion-input>
-        </ion-item>        
-      </ion-col>
-    </ion-row>
-    <ion-row>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-grid>
+      <ion-row>
         <ion-col size-sm="4" offset-sm="4">
+          
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="4" offset-sm="4"> 
           <ion-item>
-            <ion-label position="floating">Description / Ingredients</ion-label>
-            <ion-input></ion-input>
-          </ion-item>        
+            <ion-label position="floating">Item Type</ion-label>       
+            <ion-select 
+              ngModel 
+              name="itemType"
+              required>
+              <ion-select-option>Food</ion-select-option>
+              <ion-select-option>Beverage</ion-select-option>
+            </ion-select>
+          </ion-item>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size-sm="4" offset-sm="4">
           <ion-item>
-            <ion-label>Date Availability</ion-label>
-            <ion-datetime></ion-datetime>
-          </ion-item>        
+            <ion-label position="floating">Category</ion-label>       
+            <ion-select 
+              ngModel 
+              name="category">
+              <ion-select-option>Ready to eat</ion-select-option>
+              <ion-select-option>Ready to cook</ion-select-option>
+            </ion-select>
+          </ion-item>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size-sm="4" offset-sm="4">
           <ion-item>
-            <ion-label position="floating">Preparation Time</ion-label>
-            <ion-input></ion-input>
-          </ion-item>        
+            <ion-label position="floating">Sub-Category</ion-label>       
+            <ion-select 
+              ngModel 
+              name="subCategory">
+              <ion-select-option>Hot Meal</ion-select-option>
+              <ion-select-option>Delicacies</ion-select-option>
+              <ion-select-option>Deserts and Pastries</ion-select-option>
+              <ion-select-option>Sauces, sides and spreads</ion-select-option>
+              <ion-select-option>Snacks and small bites</ion-select-option>
+              <ion-select-option>Others</ion-select-option>
+            </ion-select>
+          </ion-item>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size-sm="4" offset-sm="4">
           <ion-item>
-            <ion-label position="floating">Order Capacity a day</ion-label>
-            <ion-input></ion-input>
+            <ion-label position="floating">Product Name</ion-label>
+            <ion-input 
+              ngModel 
+              name="productName"></ion-input>
           </ion-item>        
         </ion-col>
       </ion-row>
       <ion-row>
           <ion-col size-sm="4" offset-sm="4">
             <ion-item>
+              <ion-label position="floating">Description / Ingredients</ion-label>
+              <ion-input 
+                ngModel 
+                name="description"></ion-input>
+            </ion-item>        
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="4" offset-sm="4">
+            <ion-item>
+              <ion-label>Date Availability</ion-label>
+              <ion-datetime 
+                ngModel 
+                name="dateAvailability"></ion-datetime>
+            </ion-item>        
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="4" offset-sm="4">
+            <ion-item>
+              <ion-label position="floating">Preparation Time</ion-label>
+              <ion-input 
+                ngModel 
+                name="preparationTime"></ion-input>
+            </ion-item>        
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="4" offset-sm="4">
+            <ion-item>
+              <ion-label position="floating">Order Capacity a day</ion-label>
+              <ion-input 
+                ngModel 
+                name="orderCapacity"></ion-input>
+            </ion-item>        
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="4" offset-sm="4">
+            <ion-item>
               <ion-label position="floating">Exchange</ion-label>       
-              <ion-select>
+              <ion-select 
+                ngModel 
+                name="exchange">
                 <ion-select-option>Pick-up</ion-select-option>
                 <ion-select-option>Dine-in</ion-select-option>
                 <ion-select-option>Self-delivery</ion-select-option>
@@ -100,5 +120,14 @@
             </ion-item>
           </ion-col>
         </ion-row>
-  </ion-grid>
+        <ion-row>
+          <ion-col size-sm="4" offset-sm="4" text-center>
+            <ion-button
+            type="submit"
+            (onclick)="clkAddMenu()"
+            >Add to selecttions</ion-button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
